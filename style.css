@@ -1,70 +1,53 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 body{background:#111;color:white}
 
-.hero{
- height:100vh;
- background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
- url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover;
- display:flex;justify-content:center;align-items:center;
-}
-.hero-content{text-align:center;animation:fadeIn 1.5s}
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;width:100%;background:#000;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;z-index:1000}
+.logo{color:gold;font-size:22px;font-weight:600}
+.nav-links{display:flex;align-items:center}
+.nav-links a{color:white;margin:0 14px;text-decoration:none}
+.more{position:relative;cursor:pointer;font-size:22px}
+.more-menu{display:none;position:absolute;right:0;top:30px;background:#111;border-radius:10px;overflow:hidden}
+.more-menu a{display:block;padding:10px 20px;color:white;text-decoration:none}
+.more:hover .more-menu{display:block}
+
+/* HERO */
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover;display:flex;justify-content:center;align-items:center;text-align:center}
 .hero h1{font-size:60px}
 .hero p{margin:15px 0;font-size:22px}
-.btn{background:gold;padding:14px 35px;border-radius:30px;color:black;text-decoration:none;font-weight:bold}
+.btn{background:linear-gradient(45deg,gold,orange);padding:14px 35px;border-radius:30px;color:black;text-decoration:none;font-weight:bold}
 
-section{padding:60px 8%}
+/* SECTIONS */
+section{padding:100px 8%}
 h2{text-align:center;margin-bottom:40px}
 
-.cars-container{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
- gap:25px;
-}
-.car-card{
- background:#fff;color:black;border-radius:15px;overflow:hidden;
- box-shadow:0 10px 30px rgba(0,0,0,.3);
- transition:.4s;cursor:pointer
-}
+/* CARS */
+.cars-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.car-card{background:#fff;color:black;border-radius:15px;overflow:hidden;cursor:pointer;transition:.4s}
 .car-card:hover{transform:translateY(-10px)}
 .car-card img{width:100%;height:180px;object-fit:cover}
 .car-info{padding:15px}
 
 .action-section{background:linear-gradient(135deg,#000,#222)}
-.action-section.dark{background:linear-gradient(135deg,#111,#000)}
-.glass-card{
- max-width:420px;margin:auto;padding:30px;
- background:rgba(255,255,255,.1);
- backdrop-filter:blur(10px);
- border-radius:20px
-}
-input,select,button{
- width:100%;padding:12px;margin-top:12px;
- border-radius:10px;border:none
-}
+.glass-card{max-width:420px;margin:auto;padding:30px;background:rgba(255,255,255,.1);border-radius:20px}
+input,select,button{width:100%;padding:12px;margin-top:12px;border-radius:10px;border:none}
 button{background:gold;font-weight:bold;cursor:pointer}
 
-.available{color:green;font-weight:bold}
-.rented{color:red;font-weight:bold}
-
-#rentedList{max-width:800px;margin:auto;list-style:none}
-#rentedList li{
- background:rgba(255,255,255,.1);
- padding:12px;margin:10px 0;border-radius:10px
-}
+.available{color:#0f0}.rented{color:red}
 
 /* MODAL */
-.modal{
- position:fixed;top:0;left:0;width:100%;height:100%;
- background:rgba(0,0,0,.85);
- display:none;justify-content:center;align-items:center;z-index:1000
-}
-.modal-content{
- background:#111;padding:30px;border-radius:20px;
- max-width:420px;text-align:center;animation:fadeIn .4s
-}
-.modal-content img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:15px}
-.close{float:right;font-size:28px;cursor:pointer}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:2000}
+.modal-content{background:#111;padding:30px;border-radius:20px;text-align:center;width:350px}
+.modal-content img{width:100%;height:200px;border-radius:12px}
+.modal-content button{background:linear-gradient(45deg,gold,orange);padding:14px;border-radius:30px;margin-top:15px;width:100%}
 
-@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+/* FOOTER */
+footer{background:#050505;padding:70px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;color:#bbb}
+footer h3{color:gold;margin-bottom:12px}
+footer a{color:#bbb;text-decoration:none;display:block;margin:6px 0}
+footer a:hover{color:gold}
+.footer-brand{color:gold;font-size:22px;font-weight:600}
+.footer-bottom{grid-column:1/-1;text-align:center;margin-top:40px;color:#777}
+
 
 
