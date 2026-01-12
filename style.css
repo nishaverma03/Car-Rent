@@ -1,147 +1,70 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{background:#111;color:white}
 
-body{
-    background:#111;
-    color:white;
-}
-
-/* HERO */
 .hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+ height:100vh;
+ background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+ url("https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg") center/cover;
+ display:flex;justify-content:center;align-items:center;
 }
+.hero-content{text-align:center;animation:fadeIn 1.5s}
+.hero h1{font-size:60px}
+.hero p{margin:15px 0;font-size:22px}
+.btn{background:gold;padding:14px 35px;border-radius:30px;color:black;text-decoration:none;font-weight:bold}
 
-.hero-content{
-    text-align:center;
-    animation:fadeIn 1.5s;
-}
+section{padding:60px 8%}
+h2{text-align:center;margin-bottom:40px}
 
-.hero-content h1{
-    font-size:60px;
-}
-
-.hero-content p{
-    margin:15px 0;
-    font-size:22px;
-}
-
-.btn{
-    padding:14px 35px;
-    background:gold;
-    color:black;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* SECTIONS */
-section{
-    padding:60px 8%;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-/* CAR CARDS */
 .cars-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:25px;
 }
-
 .car-card{
-    background:#fff;
-    color:black;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    transition:0.4s;
+ background:#fff;color:black;border-radius:15px;overflow:hidden;
+ box-shadow:0 10px 30px rgba(0,0,0,.3);
+ transition:.4s;cursor:pointer
 }
+.car-card:hover{transform:translateY(-10px)}
+.car-card img{width:100%;height:180px;object-fit:cover}
+.car-info{padding:15px}
 
-.car-card:hover{
-    transform:translateY(-10px);
-}
-
-.car-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.car-info{
-    padding:15px;
-}
-
-/* ACTION */
-.action-section{
-    background:linear-gradient(135deg,#000,#222);
-}
-
-.action-section.dark{
-    background:linear-gradient(135deg,#111,#000);
-}
-
+.action-section{background:linear-gradient(135deg,#000,#222)}
+.action-section.dark{background:linear-gradient(135deg,#111,#000)}
 .glass-card{
-    max-width:420px;
-    margin:auto;
-    padding:30px;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
+ max-width:420px;margin:auto;padding:30px;
+ background:rgba(255,255,255,.1);
+ backdrop-filter:blur(10px);
+ border-radius:20px
 }
-
 input,select,button{
-    width:100%;
-    padding:12px;
-    margin-top:12px;
-    border-radius:10px;
-    border:none;
+ width:100%;padding:12px;margin-top:12px;
+ border-radius:10px;border:none
 }
+button{background:gold;font-weight:bold;cursor:pointer}
 
-button{
-    background:gold;
-    font-weight:bold;
-    cursor:pointer;
-}
+.available{color:green;font-weight:bold}
+.rented{color:red;font-weight:bold}
 
-/* STATUS */
-.status{
-    margin-top:12px;
-    padding:10px;
-    border-radius:8px;
-    text-align:center;
-}
-
-.available{ color:green; font-weight:bold; }
-.rented{ color:red; font-weight:bold; }
-
-/* RENTED LIST */
-#rentedList{
-    list-style:none;
-    max-width:800px;
-    margin:auto;
-}
-
+#rentedList{max-width:800px;margin:auto;list-style:none}
 #rentedList li{
-    background:rgba(255,255,255,0.1);
-    padding:12px;
-    margin:10px 0;
-    border-radius:10px;
+ background:rgba(255,255,255,.1);
+ padding:12px;margin:10px 0;border-radius:10px
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+/* MODAL */
+.modal{
+ position:fixed;top:0;left:0;width:100%;height:100%;
+ background:rgba(0,0,0,.85);
+ display:none;justify-content:center;align-items:center;z-index:1000
 }
+.modal-content{
+ background:#111;padding:30px;border-radius:20px;
+ max-width:420px;text-align:center;animation:fadeIn .4s
+}
+.modal-content img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:15px}
+.close{float:right;font-size:28px;cursor:pointer}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+
