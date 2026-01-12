@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Premium Car Rental System</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Premium Car Rental</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HERO SECTION -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Premium Car Rental</h1>
-        <p>Luxury • Comfort • Performance</p>
-        <a href="#cars" class="btn">Explore Cars</a>
-    </div>
+  <div class="hero-content">
+    <h1>Premium Car Rental</h1>
+    <p>Luxury • Comfort • Performance</p>
+    <a href="#cars" class="btn">Explore Cars</a>
+  </div>
 </section>
 
-<!-- CAR LIST -->
 <section id="cars" class="cars-section">
-    <h2>🚗 Available Cars</h2>
-    <div class="cars-container" id="carsContainer"></div>
+  <h2>🚗 Available Cars</h2>
+  <div class="cars-container" id="carsContainer"></div>
 </section>
 
-<!-- RENT SECTION -->
 <section class="action-section">
-    <h2>📋 Rent a Car</h2>
-    <div class="glass-card">
-        <input type="text" id="customerName" placeholder="Customer Name">
-        <select id="carSelect"></select>
-        <input type="number" id="rentalDays" placeholder="Rental Days">
-        <button onclick="rentCar()">Rent Now</button>
-        <div id="rentResult" class="status"></div>
-    </div>
+  <h2>📋 Rent a Car</h2>
+  <div class="glass-card">
+    <input type="text" id="customerName" placeholder="Customer Name">
+    <select id="carSelect"></select>
+    <input type="number" id="rentalDays" placeholder="Rental Days">
+    <button onclick="rentCar()">Rent Now</button>
+    <div id="rentResult" class="status"></div>
+  </div>
 </section>
 
-<!-- RETURN SECTION -->
 <section class="action-section dark">
-    <h2>🔁 Return Car</h2>
-    <div class="glass-card">
-        <select id="returnCarSelect"></select>
-        <button onclick="returnCar()">Return Car</button>
-        <div id="returnResult" class="status"></div>
-    </div>
+  <h2>🔁 Return Car</h2>
+  <div class="glass-card">
+    <select id="returnCarSelect"></select>
+    <button onclick="returnCar()">Return Car</button>
+    <div id="returnResult" class="status"></div>
+  </div>
 </section>
 
-<!-- RENTED LIST -->
 <section class="cars-section">
-    <h2>📊 Rented Cars List</h2>
-    <p>Total Cars Rented: <b id="totalRented">0</b></p>
-    <ul id="rentedList"></ul>
+  <h2>📊 Rented Cars List</h2>
+  <p>Total Cars Rented: <b id="totalRented">0</b></p>
+  <ul id="rentedList"></ul>
 </section>
+
+<!-- MODAL -->
+<div id="carModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImg">
+    <h2 id="modalName"></h2>
+    <p id="modalPrice"></p>
+    <p id="modalStatus"></p>
+    <button onclick="quickRent()">Quick Rent</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
